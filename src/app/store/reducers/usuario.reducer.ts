@@ -3,7 +3,7 @@ import * as fromUsuario from '../actions/index';
 
 // 4.1 Aquí definimos como queremos que luzca el state
 export interface UsuarioState {
-  users: Usuario[];
+  users: Usuario;
   loaded: boolean;
   loading: boolean;
   error: any;
@@ -31,7 +31,7 @@ export function usuarioReducer( state = estadoInicial, action: fromUsuario.usuar
         ...state,
         loading: false,
         loaded: true,
-        user: [ ...action.usuario ]
+        user: { ...action.usuario }
       }
 
     case fromUsuario.CARGAR_USUARIO_FAIL:
