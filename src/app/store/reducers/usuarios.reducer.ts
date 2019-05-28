@@ -1,7 +1,7 @@
 import { Usuario } from 'src/app/models/usuario.model';
 import * as fromUsuarios from '../actions/index';
 
-// 3 Aquí definimos como queremos que luzca el state
+// 4 Aquí definimos como queremos que luzca el state
 export interface UsuariosState {
   users: Usuario[];
   loaded: boolean;
@@ -9,15 +9,15 @@ export interface UsuariosState {
   error: any;
 }
 
-// 4 Inicializamos los parámetros del state
+// 5 Inicializamos los parámetros del state
 const estadoInicial: UsuariosState = {
   users: [],
   loaded: false,
   loading: false,
   error: null
-}
+};
 
-// 5 Creamos el reducer
+// 6 Creamos el reducer
 export function usuariosReducer( state = estadoInicial, action: fromUsuarios.usuarioAcciones ) {
   switch ( action.type ) {
     case fromUsuarios.CARGAR_USUARIOS:
