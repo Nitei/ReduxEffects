@@ -1,0 +1,31 @@
+import { Action } from '@ngrx/store';
+import { Usuario } from '../../models/usuario.model';
+
+
+// 1.1  Creamos las constantes de las acciones
+export const CARGAR_USUARIO = '[Usuario] Cargar usuario';
+export const CARGAR_USUARIO_FAIL = '[Usuario] Cargar usuario FAIL';
+export const CARGAR_USUARIO_SUCCESS = '[Usuario] Cargar usuario SUCCESS';
+
+// 2.1 Creamos las las acciones
+export class CargarUsuario implements Action {
+  readonly type = CARGAR_USUARIO;
+
+  constructor( public id: string ) { }
+}
+export class CargarUsuarioFail implements Action {
+  readonly type = CARGAR_USUARIO_FAIL;
+
+  constructor( public payload: any ) { }
+}
+export class CargarUsuarioSuccess implements Action {
+  readonly type = CARGAR_USUARIO_SUCCESS;
+
+  constructor( public usuario: Usuario[] ) { }
+}
+
+// 3.1 exportamos los tipos de las acciones
+export type usuarioAccion =
+  CargarUsuarioSuccess |
+  CargarUsuarioFail |
+  CargarUsuario;
