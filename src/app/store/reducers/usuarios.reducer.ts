@@ -39,7 +39,11 @@ export function usuariosReducer( state = estadoInicial, action: fromUsuarios.usu
         ...state,
         loading: false,
         loaded: false,
-        users: action.payload
+        error: {
+          status: action.payload.status,
+          message: action.payload.message,
+          url: action.payload.url
+        }
       }
 
     default:
