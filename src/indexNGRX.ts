@@ -12,5 +12,5 @@
   4.1 Crear la interfaz del store "AppState"
   4.2 Crear el actionReducerMap que es la combinación de todos los
      reducers que usa la interface de "AppState"
-
+  4.3 Agregar AppReducers en el storeModule de app.module.ts
 */
