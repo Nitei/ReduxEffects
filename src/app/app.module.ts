@@ -11,6 +11,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducers } from './store/app.reducers';
 import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { effectsArr } from './store/effects/index';
 
 @NgModule( {
   declarations: [
@@ -22,6 +24,7 @@ import { environment } from '../environments/environment';
     SharedModule,
     BrowserModule,
     AppRoutingModule,
+    EffectsModule.forRoot( effectsArr ),
     StoreModule.forRoot( appReducers ),
     StoreDevtoolsModule.instrument( {
       maxAge: 25,
